@@ -1,6 +1,4 @@
-from django.http import Http404
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Job
 
 def index(request):
@@ -12,8 +10,5 @@ def index(request):
         return render(request, 'job/index.html', {'all_jobs': all_jobs,})
 
 def detail(request, job_id):
-    try:
-        job = Job.objects.get(pk=job_id)
-    except Job.DoesNotExist:
-        raise Http404("Job does not exist")
+    job = get_object_or_404(Job, pk=job_id)
     return render(request, 'job/detail.html', {'job': job})
