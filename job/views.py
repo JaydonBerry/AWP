@@ -1,14 +1,15 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Job
+from django.views import generic
+from.models import Job
 
-def index(request):
-    all_jobs = Job.objects.all()
-    html = ''
-    for job in all_jobs:
-        url = '/job/' + str(job.id) + '/'
-        html += '<a href="' + url + '">'+ job.title + '</a<br>'
-        return render(request, 'job/index.html', {'all_jobs': all_jobs,})
+class IndexView(generic.ListView):
+    template_name = 'job/index.html'
 
-def detail(request, job_id):
-    job = get_object_or_404(Job, pk=job_id)
-    return render(request, 'job/detail.html', {'job': job})
+    def get_queryset(self):
+        return Job.objects.all()
+
+class DetailView(generic.DetailView):
+    template_name = 'job/index.html'
+
+    def get_queryset(self):
+        model = Job
+        template_name = 'job/detail.html'

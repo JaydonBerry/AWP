@@ -1,25 +1,10 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-    <!--loads path for static files-->
-    {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'job/style.css' %}" />
-
-</head>
-<body>
-{% if all_jobs%}
-<h3>All Job</h3>
+{% extends 'job/base.html' %}
+{% block body %}
     <ul>
-        {% for job in all_jobs %}
+        {% for job in object_list %}
         <li><a href="{% url 'job:detail' job.id %}">{{ job.title }}</a></li>
         {% endfor %}
     </ul>
-{% else%}
-    <h3>you don't have any database entries</h3>
-{% endif %}
 
-</body>
-</html>
+
+{% endblock %}
