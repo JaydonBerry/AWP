@@ -1,5 +1,6 @@
 from django.views import generic
 from.models import Job
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 class IndexView(generic.ListView):
     template_name = 'job/index.html'
@@ -8,8 +9,9 @@ class IndexView(generic.ListView):
         return Job.objects.all()
 
 class DetailView(generic.DetailView):
-    template_name = 'job/index.html'
+    model = Job
+    template_name = 'job/detail.html'
 
-    def get_queryset(self):
-        model = Job
-        template_name = 'job/detail.html'
+class JobCreate(CreateView):
+    model = Job
+    fields = ['username' , 'title' , 'description']
