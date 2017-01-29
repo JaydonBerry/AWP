@@ -1,6 +1,6 @@
 {% extends 'job/base.html' %}
 {% block body %}
-<h1>{{ job.username }}</h1>
+<img src="{{ job.image.url }}" class="img-responsive">
 <h1>{{ job.title }}</h1>
 <p>{{ job.description }}</p>
 {% endblock %}

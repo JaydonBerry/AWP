@@ -22,19 +22,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">JOB</a>
+            <a class="navbar-brand" href="#">HANDYMAN</a>
         </div>
 
         <div class="collaps navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="{%url 'job:index' %}"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp;Profile</a>
+                <li class="">
+                    <a href="{%url 'job:index' %}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Profile</a>
                 </li>
                 <li class="">
-                    <a href="#"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp;All Jobs</a>
+                    <a href="{% url 'job:index' %}"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;&nbsp;All Jobs</a>
                 </li>
                 <li class="">
-                    <a href="{% url 'job:job-add' %}"><span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp;Add Job</a>
+                    <a href="{% url 'job:job-add' %}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Add Job</a>
                 </li>
             </ul>
             <form class="navbar-form navbar-left" role="search" method="get" action="#">
@@ -45,7 +45,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="">
-                    <a href="#"><span></span>&nbsp;Logout</a>
+                    <a href="#"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a>
                 </li>
             </ul>
 
