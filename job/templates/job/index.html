@@ -1,10 +1,24 @@
 {% extends 'job/base.html' %}
 {% block body %}
-    <ul>
         {% for job in object_list %}
-        <li><a href="{% url 'job:detail' job.id %}">{{ job.title }}</a></li>
-        <a href="{%url 'job:job-update' job.id %}"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;Update</a>
-<a href="{%url 'job:job-delete' job.id %}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;Delete</a>
+<div class="page-header">
+  <h1>{{ job.title }} <small>{{ job.description }}</small></h1>
+</div>
+            <h3>{{ job.location }}</h3>
+       <form action="{%url 'job:job-update' job.id %}" method="GET">
+            {% csrf_token %}
+            <input type="hidden" name="job_id" value="{{ job.id }}"/>
+            <button type="submit" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-file">&nbsp;UPDATE</span>
+            </button>
+        </form>
+
+        <form action="{%url 'job:job-delete' job.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="job_id" value="{{ job.id }}"/>
+            <button type="submit" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-trash">&nbsp;DELETE</span>
+            </button>
+        </form>
         {% endfor %}
-    </ul>
 {% endblock %}

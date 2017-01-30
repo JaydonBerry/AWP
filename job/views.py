@@ -12,7 +12,7 @@ class IndexView(generic.ListView):
         return Job.objects.all()
 
 class ProfileView(generic.ListView):
-    template_name = 'job/registrationForm.html'
+    template_name = 'job/profile.html'
     fields = ['username', 'email', 'first_name', 'last_name']
 
     def get_queryset(self):
