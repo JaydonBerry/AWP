@@ -18,11 +18,15 @@ from django.contrib import admin
 from django.http import HttpResponseRedirect
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^job/', include('job.urls')),
-url(r'^$', lambda r: HttpResponseRedirect('job/')),
+    url(r'^$', lambda r: HttpResponseRedirect('login/')),
+    url(r'^login/$', auth_views.login, name='login'),
+    url(r'^logout/$', auth_views.logout, name='logout'),
+    url(r'^admin/', admin.site.urls),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

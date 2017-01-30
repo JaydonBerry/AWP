@@ -3,8 +3,8 @@
     <ul>
         {% for job in object_list %}
         <li><a href="{% url 'job:detail' job.id %}">{{ job.title }}</a></li>
+        <a href="{%url 'job:job-update' job.id %}"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;Update</a>
+<a href="{%url 'job:job-delete' job.id %}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>&nbsp;Delete</a>
         {% endfor %}
     </ul>
-
-
 {% endblock %}

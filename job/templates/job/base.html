@@ -28,7 +28,7 @@
         <div class="collaps navbar-collapse" id="topNavBar">
             <ul class="nav navbar-nav">
                 <li class="">
-                    <a href="{%url 'job:index' %}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Profile</a>
+                    <a href="{%url 'job:profile' %}"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Profile</a>
                 </li>
                 <li class="">
                     <a href="{% url 'job:index' %}"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;&nbsp;All Jobs</a>
@@ -45,7 +45,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="">
-                    <a href="#"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a>
+                    <a href="{% url 'login' %}"><span class="glyphicon glyphicon-off"></span>&nbsp;Logout</a>
                 </li>
             </ul>
 
