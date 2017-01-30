@@ -1,0 +1,22 @@
+.center-header{
+	text-align: center;
+}
+
+.cards{
+	border: solid #eee 1px;
+	padding: 1em;
+	padding-top: 0;
+
+}
+
+.center-form{
+	margin: 0 auto;
+}
+
+.center{
+	text-align: center;
+}
+
+.img-center{
+	margin: 0 auto;
+}

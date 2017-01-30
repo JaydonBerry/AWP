@@ -38,4 +38,4 @@ class UserCreate(CreateView):
     model = User
     fields = ['username', 'email', 'password', 'first_name', 'last_name']
     template_name = 'job/registrationForm.html'
-    success_url = reverse_lazy('job:profile')
+    success_url = reverse_lazy('login')

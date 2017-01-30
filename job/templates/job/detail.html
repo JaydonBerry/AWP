@@ -1,8 +1,10 @@
 {% extends 'job/base.html' %}
 {% block body %}
-<img src="{{ job.image.url }}" class="img-responsive">
-<h1>{{ job.title }}</h1>
-<p>{{ job.description }}</p>
-<p>{{ job.id }}</p>
+<div class="col-md-4 col-md-offset-4 cards">
+	<img class="img-center" src="{{ job.image.url }}" class="img-responsive">
+	<h1>{{ job.title }}</h1>
+	<p>{{ job.description }}</p>
+	<p>{{ job.id }}</p>
+</div>
 
 {% endblock %}

@@ -1,8 +1,8 @@
 {% extends 'job/base.html' %}
 {% block body %}
-{{user.username}}
-{{user.email}}
-{{user.first_name}}
-{{user.last_name}}
-{{user.pk}}
+	<h1 class="center-header">Welcome {{user.username}} </h1>
+	<div class="col-sm-12 col-md-4 col-lg-4">
+	<h2>Name: {{user.first_name}} {{user.last_name}}</h2>
+		<h2>Email:&nbsp;{{user.email}} </h2>
+	</div>
 {% endblock %}

@@ -3,12 +3,13 @@
 {% block title %}Login{% endblock %}
 
 {% block body %}
-  <h2>Login</h2>
-  <form method="post">
+  <h2 class="center-header text-center">Login</h2>
+  <form method="post" class="col-md-4 col-md-offset-4">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Login</button>
-
-    <a href="{% url 'job:user-create' %}">Create New User?</a>
+    <div class="form_group center">
+	    <button type="submit">Login</button>
+	    <a href="{% url 'job:user-create' %}">Create New User?</a>
+    </div>
   </form>
 {% endblock %}
